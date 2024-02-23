@@ -1,9 +1,11 @@
 import React from "react";
+import clsx from "clsx";
 
 export default function Button(props) {
-  const { children, type, disabled } = props;
+  const { children, className, ...rest } = props;
+  const classes = clsx(className, "ui-button");
   return (
-    <button className="ui-button" type={type} disabled={disabled}>
+    <button className={classes} {...rest}>
       {children}
     </button>
   );
